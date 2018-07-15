@@ -244,12 +244,10 @@ function readDir(path, options, callback) {
         let state_flag = false
         let current_state = undefined
         parser.on('startElement', function (name, attrs) {
-          if (name === 'Field') {
-            if (attrs['Name'] === 'diag_princ' || attrs['Name'] === 'diag_secun') {
+          if (name === 'DIAG_PRINC' || name === 'DIAG_SECUN') {
               diag_flag = true
-            } else if (attrs['Name'] === 'uf_zi') {
+          } else if (name === 'UF_ZI') {
               state_flag = true
-            }
           }
         })
 
@@ -302,7 +300,7 @@ function readDir(path, options, callback) {
         })
 
         parser.on('endElement', function (name) {
-          if (name === 'HEAD') {
+          if (name === 'Tabela') {
             checker++
             console.log(checker)
             if (checker === NUMBER_OF_FILES) {
