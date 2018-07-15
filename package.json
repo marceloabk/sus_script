@@ -11,8 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "json2csv": "^4.1.6",
-    "node-expat": "^2.3.16",
-    "xml-parser": "^1.2.1",
-    "xml-stream": "^0.4.5"
+    "node-expat": "^2.3.16"
   }
 }
